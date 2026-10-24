@@ -5,8 +5,8 @@ class Solution {
 public:
     int peakIndexInMountainArray(vector<int>& arr) {
         int n = arr.size();
-        int hi = n-1;
-        int lo = 0;
+        int hi = n-2;  //start from second last ele
+        int lo = 1;    //start from second ele
 
         while(lo<=hi){
             int mid = lo +(hi-lo)/2;
