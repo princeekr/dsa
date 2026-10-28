@@ -1,0 +1,21 @@
+//1823. Find the Winner of the Circular Game
+
+class Solution {
+public:
+    int findTheWinner(int n, int k) {
+        queue<int> q; //put ele's from 1 to n in queue
+        for(int i=1;i<=n;i++){
+            q.push(i);
+        }
+
+        while(q.size() > 1){
+            for(int i=0;i<k-1;i++){
+                q.push(q.front()); //to reach kth ele - first till kth ele, push it to the back and then pop
+                q.pop();  
+            }
+            q.pop(); //finally pop the kth ele
+        }
+
+        return q.front();
+    }
+};
